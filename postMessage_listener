@@ -4,10 +4,11 @@
   // Prepared to receive dataLayer as string and make a new push on window.parent
   // Variable name 'dif' is use to discriminate between different postMessages from the iframe to parent
   // Variable name 'difLenght' is use to substring the object before parsing
+  // Documentation: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
   
   // Variable declaration
-  var origin = {{define origin here}};
-  var dif = {{string to differenciate message from origin is dataLayer}};
+  var origin = {{define origin from message here e.g. 'https://www.github.com'}};
+  var dif = {{string to differenciate message from origin in parent}};
   var difLenght = dif.length;
   
   function addEvent(el, evt, fn) {
@@ -25,7 +26,7 @@
 }
 
 // Listener
-addEvent(window, 'message', function(message) {
+window.addEvent(window, 'message', function(message) {
   if(typeof message.data != undefined && typeof message.data != "undefined"){
      if (message.data.toString().indexOf(dif) > -1 && (message.origin === origin)) {
          dataLayer.push(JSON.parse(message.data.substring(difLenght)))
