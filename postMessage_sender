@@ -1,0 +1,19 @@
+// Object to be send in the postMessage
+// The variable is declared as a 'var' instead of let because
+// Googe Tag Manager does not support 'let'
+// Variable name 'dif' is use to discriminate between different postMessages from the iframe to parent
+// The value of 'dif' must be the same in the postMessage_listener (https://github.com/nicopearg/gtm_codes/blob/main/postMessage_listener)
+
+// Variable declaration
+var targetOrigin = {{host of the intended receiver or can declare '*' if no preference e.g. https://www.github.com}}
+var dif = {{string to differenciate message from origin is dataLayer}};
+var message = {
+        'key1':'value1',
+        'key2':'value2',
+        'key3':'value3',
+        ...
+};
+var postObject = dif + JSON.stringify(message);
+
+// Sender
+window.parent.postMessage(postObject, targetOrigin);
