@@ -3,11 +3,12 @@
   // Receives postMessage from an iframe (define in origin)
   // Prepared to receive dataLayer as string and make a new push on window.parent
   // Variable name 'dif' is use to discriminate between different postMessages from the iframe to parent
+  // Variable name 'difLenght' is use to substring the object before parsing
   
   // Variable declaration
   var origin = {{define origin here}};
   var dif = {{string to differenciate message from origin is dataLayer}};
-  
+  var difLenght = dif.length;
   
   function addEvent(el, evt, fn) {
   if (el.addEventListener) {
@@ -26,8 +27,8 @@
 // Listener
 addEvent(window, 'message', function(message) {
   if(typeof message.data != undefined && typeof message.data != "undefined"){
-     if (message.data.toString().indexOf("gapm-") > -1 && (message.origin === origin)) {
-         dataLayer.push(JSON.parse(message.data.substring(5)))
+     if (message.data.toString().indexOf(dif) > -1 && (message.origin === origin)) {
+         dataLayer.push(JSON.parse(message.data.substring(difLenght)))
       }
     }
 });
