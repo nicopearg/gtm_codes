@@ -1,0 +1,83 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2021-03-11 13:51:01",
+    "containerVersion": {
+        "path": "accounts/4560481791/containers/32118837/versions/4",
+        "accountId": "4560481791",
+        "containerId": "32118837",
+        "containerVersionId": "4",
+        "name": "MTG - Facebook Px Implementation",
+        "description": "Configuration of basic Facebook Implementation. \nOfficial documentation:\nhttps://developers.facebook.com/docs/facebook-pixel/implementation/\nhttps://developers.facebook.com/ads/blog/post/v2/2017/11/28/event-tracking-with-multiple-pixels-tracksingle/",
+        "container": {
+            "path": "accounts/4560481791/containers/32118837",
+            "accountId": "4560481791",
+            "containerId": "32118837",
+            "name": "SuperFeast Kajabi",
+            "publicId": "GTM-56D94MP",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1596589440250",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/4560481791/containers/32118837/workspaces?apiLink=container"
+        },
+        "tag": [
+            {
+                "accountId": "4560481791",
+                "containerId": "32118837",
+                "tagId": "5",
+                "name": "Px - FB - All Pages",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<!-- Facebook Pixel Code -->\n<script>\n  var pxId = {{Const - Facebook Px ID}};\n  \n  !function(f,b,e,v,n,t,s)\n  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?\n  n.callMethod.apply(n,arguments):n.queue.push(arguments)};\n  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\n  n.queue=[];t=b.createElement(e);t.async=!0;\n  t.src=v;s=b.getElementsByTagName(e)[0];\n  s.parentNode.insertBefore(t,s)}(window, document,'script',\n  'https://connect.facebook.net/en_US/fbevents.js');\n  fbq('init', pxId);\n  fbq('trackSingle', pxId, 'PageView');\n</script>\n<noscript>\n  <img height=\"1\" width=\"1\" style=\"display:none\" \n       src=\"https://www.facebook.com/tr? \n CHANGE CODE IN NON SCRIPT \n id=5357372420970082\n &ev=PageView&noscript=1\"/>\n</noscript>\n<!-- End Facebook Pixel Code -->"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "true"
+                    }
+                ],
+                "fingerprint": "1615462821726",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "parentFolderId": "9",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                }
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "4560481791",
+                "containerId": "32118837",
+                "variableId": "11",
+                "name": "Const - Facebook Px ID",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "XXXXXXXXXXXXXXXX"
+                    }
+                ],
+                "fingerprint": "1615462110461",
+                "parentFolderId": "9",
+                "formatValue": {}
+            }
+        ],
+        "folder": [
+            {
+                "accountId": "4560481791",
+                "containerId": "32118837",
+                "folderId": "9",
+                "name": "Ads",
+                "fingerprint": "1615412582833"
+            }
+        ],
+        "fingerprint": "1615470633122",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/4560481791/containers/32118837/versions/4?apiLink=version"
+    }
+}
