@@ -24,7 +24,7 @@
     };
   }
 }
-
+ 
 // Listener
 window.addEvent(window, 'message', function(message) {
   if(typeof message.data != undefined && typeof message.data != "undefined"){
